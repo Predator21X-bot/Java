@@ -13,6 +13,15 @@ public class UserService {
         return userList;
     }
 
+    public User fetchUsers(Long id){
+        for(User user : userList){
+            if(user.getId().equals(id)){
+                return user;
+            }
+        }
+        return null;
+    }
+
     public java.util.List<User> addUser(User user){
         user.setId(nextId++);
         userList.add(user);
